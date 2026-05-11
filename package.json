@@ -1,0 +1,12 @@
+{
+  "name": "lutz-pi-protection-map",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mapa de protecao de propriedade intelectual do Lutz Institute.",
+  "scripts": {
+    "check": "echo \"No checks configured yet\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED"
+}
