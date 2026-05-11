@@ -182,14 +182,21 @@ Planned files:
 
 ## Status
 
-This repository is in its initial architecture phase.
+This repository has a Phase 1 public prototype implemented.
 
 Current focus:
 
-* define the conceptual foundation;
-* document the experience model;
-* establish the diagnostic logic;
-* implement the first interactive prototype.
+* validate the initial diagnostic experience;
+* refine the scoring rules and result copy;
+* prepare future visual result mapping.
+
+## Development
+
+```bash
+npm install
+npm run dev
+npm run check
+```
 
 ## Institutional Note
 

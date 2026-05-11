@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-lutz-black: #1a1a1b;
+  --color-lutz-graphite: #2f3033;
+  --color-lutz-graphite-soft: #3d3f43;
+  --color-lutz-silver: #c8c8c2;
+  --color-lutz-silver-muted: #8c8d89;
+  --color-lutz-white: #ffffff;
+  --font-sans: "Inter", "Aptos", "Segoe UI", system-ui, sans-serif;
+}
+
+:root {
+  background: #1a1a1b;
+  color: #ffffff;
+  color-scheme: dark;
+  font-family: "Inter", "Aptos", "Segoe UI", system-ui, sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(200, 200, 194, 0.08), transparent 34rem),
+    #1a1a1b;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(200, 200, 194, 0.28);
+  color: #ffffff;
+}
+
+.portal-sheen {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent 36%),
+    linear-gradient(315deg, rgba(200, 200, 194, 0.12), transparent 42%);
+}
+
