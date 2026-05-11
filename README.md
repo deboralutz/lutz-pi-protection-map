@@ -195,3 +195,8 @@ Current focus:
 
 Lutz PI Protection Map is designed as a clarity tool for brand protection. It does not replace legal analysis, official INPI research, or professional evaluation. Its function is to help users understand their current situation and identify responsible next steps.
 
+## Language Policy
+
+This repository uses English for technical documentation, code organization, and developer-facing notes.
+
+All public-facing content, user interface text, diagnostic messages, reports, and institutional communication are written in Brazilian Portuguese, since the project is designed for the Brazilian intellectual property context and the INPI trademark registration environment.
