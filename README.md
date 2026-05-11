@@ -1,3 +1,4 @@
+
 # Lutz PI Protection Map
 
 **Lutz PI Protection Map** is an interactive orientation environment designed to help creators, independent professionals, and authorial brands understand the current protection status of their brand identity.
@@ -139,3 +140,58 @@ lutz-pi-protection-map/
 │   └── roadmap.md
 ├── README.md
 └── package.json
+````
+
+## Roadmap
+
+### Phase 1 — Interactive Landing Page
+
+Create a public diagnostic page that introduces the Lutz PI Protection Map and guides the user through an initial self-assessment.
+
+### Phase 2 — Diagnostic Logic
+
+Define the questions, weights, states, and interpretive rules used to generate the brand protection reading.
+
+### Phase 3 — Visual Result Map
+
+Transform the diagnostic result into a visual summary that helps the user understand their current protection stage.
+
+### Phase 4 — Exportable Report
+
+Generate a simple PDF or structured summary that the user can save or send for professional evaluation.
+
+### Phase 5 — Client Area
+
+Create a private area where clients can follow the status of their trademark process, documents, deadlines, and next steps.
+
+### Phase 6 — Intellectual Asset System
+
+Expand the platform into a broader environment for mapping, documenting, and monitoring intellectual assets.
+
+## Documentation
+
+The `/docs` directory will contain the conceptual, experiential, diagnostic, visual, and technical architecture of the project.
+
+Planned files:
+
+* `arquitetura.md` — system architecture and technical layers;
+* `experiencia.md` — user experience principles, tone, rhythm, and interaction model;
+* `identidade-visual.md` — visual identity, UI behavior, color, typography, and symbol logic;
+* `logica-diagnostico.md` — diagnostic model, questions, scoring, and states;
+* `roadmap.md` — implementation phases and future possibilities.
+
+## Status
+
+This repository is in its initial architecture phase.
+
+Current focus:
+
+* define the conceptual foundation;
+* document the experience model;
+* establish the diagnostic logic;
+* implement the first interactive prototype.
+
+## Institutional Note
+
+Lutz PI Protection Map is designed as a clarity tool for brand protection. It does not replace legal analysis, official INPI research, or professional evaluation. Its function is to help users understand their current situation and identify responsible next steps.
+
