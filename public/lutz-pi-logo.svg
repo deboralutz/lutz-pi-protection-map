@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Lutz Propriedade Intelectual</title>
+  <desc id="desc">Logotipo Lutz Propriedade Intelectual em branco sobre fundo transparente, com moldura de portal.</desc>
+  <g fill="none" stroke="#F3F1EC" stroke-linecap="butt" stroke-linejoin="round">
+    <path
+      d="M350 844H226C197 844 177 821 177 794V233C177 205 198 183 226 183H774C802 183 823 205 823 233V794C823 821 803 844 774 844H650"
+      stroke-width="14"
+    />
+  </g>
+  <g fill="#F3F1EC" font-family="Satoshi, Inter, Aptos, 'Segoe UI', Arial, sans-serif">
+    <text x="245" y="586" font-size="225" font-weight="300" letter-spacing="15">LUTZ</text>
+    <text x="252" y="652" font-size="39" font-weight="300" letter-spacing="3">PROPRIEDADE</text>
+    <text x="252" y="706" font-size="39" font-weight="300" letter-spacing="3">INTELECTUAL</text>
+  </g>
+</svg>
