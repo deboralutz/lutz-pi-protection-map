@@ -62,23 +62,19 @@ export function DiagnosticExperience() {
 
   return (
     <section
-      className="bg-lutz-obsidian px-5 py-24 text-lutz-ivory sm:px-8 sm:py-28 lg:px-12"
+      className="bg-lutz-obsidian px-5 py-20 text-lutz-ivory sm:px-8 sm:py-24 lg:px-12"
       id="diagnostico"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-10 lg:grid-cols-[0.68fr_0.32fr] lg:items-end">
+        <div className="max-w-4xl">
           <div>
             <p className="text-sm font-medium uppercase text-lutz-fog/85">
               Diagnóstico orientativo
             </p>
-            <h2 className="mt-6 max-w-5xl text-4xl font-medium leading-[1.04] text-lutz-ivory sm:text-6xl lg:text-7xl">
-              Localize a relação entre presença pública e proteção formal.
+            <h2 className="mt-5 text-4xl font-medium leading-[1.04] text-lutz-ivory sm:text-5xl lg:text-6xl">
+              Localize o estágio atual da sua marca.
             </h2>
           </div>
-          <p className="max-w-md text-base leading-7 text-lutz-fog/68 lg:pb-2">
-            As respostas ficam apenas no navegador durante esta leitura. Nenhum
-            cadastro é necessário para ver o resultado.
-          </p>
         </div>
 
         {showResult ? (
