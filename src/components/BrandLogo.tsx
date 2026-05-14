@@ -10,7 +10,7 @@ export function BrandLogo({ className = "", decorative = false }: BrandLogoProps
       aria-hidden={decorative ? true : undefined}
       className={["block h-auto select-none", className].join(" ")}
       draggable="false"
-      src="/lutz-pi-logo.png"
+      src="/lutz-pi-logo.svg"
     />
   );
 }

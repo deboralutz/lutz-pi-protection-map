@@ -93,7 +93,7 @@ Sombras devem ser minimalistas, com profundidade leve e contraste elegante. Evit
 
 ## Logo system
 
-O logo institucional fica em `public/lutz-pi-logo.png` e é aplicado como assinatura principal no cabeçalho.
+O logo institucional fica em `public/lutz-pi-logo.svg` e é aplicado como assinatura principal no cabeçalho.
 
 Estrutura futura do sistema de logo:
 
