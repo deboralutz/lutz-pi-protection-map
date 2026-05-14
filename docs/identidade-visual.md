@@ -93,7 +93,7 @@ Sombras devem ser minimalistas, com profundidade leve e contraste elegante. Evit
 
 ## Logo system
 
-O logo institucional fica em `public/lutz-pi-logo.svg` e é aplicado no topo e no primeiro plano visual do hero.
+O logo institucional fica em `public/lutz-pi-logo.png` e é aplicado como assinatura principal no cabeçalho.
 
 Estrutura futura do sistema de logo:
 
@@ -102,7 +102,7 @@ Estrutura futura do sistema de logo:
 - Clear Space: área mínima de respiro.
 - Improper Usage: distorção, sombra, outline, cores erradas e compressão.
 
-O ativo final de marca deve ser reconstruído em vetor no Figma, com grid, proporção, optical spacing, teste de redução e variantes. O SVG exportado dessa versão master deve substituir o ativo técnico atual quando estiver pronto.
+O ativo vetorial master deve ser mantido no Figma, com grid, proporção, optical spacing, teste de redução e variantes. Quando a versão SVG institucional estiver disponível, ela pode substituir o PNG técnico sem alterar a estrutura do componente.
 
 ## Componentes
 
