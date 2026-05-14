@@ -151,3 +151,25 @@ O manual vivo da marca deve reunir missão, posicionamento, tom visual, linguage
 - Tipografia institucional com Satoshi como direção principal.
 - Símbolo de portal como metáfora de acesso, limite e proteção.
 - Botões calmos, sem linguagem de urgência.
+
+## Direção de interface
+
+A experiência deve se aproximar de um sistema de leitura contemporâneo, não de um dashboard SaaS. A hierarquia tipográfica deve carregar a maior parte da estrutura, com divisores finos, espaço negativo e interações discretas.
+
+Evitar:
+
+- excesso de containers;
+- cards aninhados;
+- bordas em todos os elementos;
+- sombras evidentes;
+- aparência de formulário pesado;
+- contraste alto em elementos secundários.
+
+Buscar:
+
+- minimalismo editorial;
+- ritmo respirado;
+- respostas como linhas ou blocos textuais leves;
+- progresso discreto;
+- superfícies quase invisíveis;
+- contraste elegante entre Soft Ivory, Fog Blue e Obsidian Black.

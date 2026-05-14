@@ -14,58 +14,65 @@ export function ResultPanel({
   onRestart,
 }: ResultPanelProps) {
   return (
-    <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr]">
-      <aside className="rounded-3xl border border-lutz-fog/15 bg-lutz-ivory/[0.025] p-6 sm:p-8">
-        <p className="text-xs font-medium uppercase text-lutz-fog">
-          Estado principal
-        </p>
-        <h2 className="mt-5 text-3xl font-semibold text-lutz-ivory sm:text-4xl">
-          {result.stateLabel}
-        </h2>
-        <p className="mt-5 text-base leading-7 text-lutz-fog/80">{result.summary}</p>
-      </aside>
+    <div className="mt-20 border-t border-lutz-fog/16 pt-12 lg:pt-16">
+      <div className="grid gap-14 lg:grid-cols-[0.38fr_0.62fr] lg:gap-20">
+        <aside>
+          <p className="text-sm font-medium uppercase text-lutz-fog/80">
+            Estado principal
+          </p>
+          <h2 className="mt-6 max-w-xl text-4xl font-medium leading-[1.05] text-lutz-ivory sm:text-6xl">
+            {result.stateLabel}
+          </h2>
+          <p className="mt-8 max-w-xl text-lg leading-8 text-lutz-fog/72">
+            {result.summary}
+          </p>
+        </aside>
 
-      <section className="rounded-3xl border border-lutz-fog/15 bg-lutz-steel/30 p-6 sm:p-8">
-        <div className="grid gap-8">
-          <div>
-            <h3 className="text-sm font-semibold uppercase text-lutz-fog">
+        <section className="space-y-12">
+          <div className="border-y border-lutz-fog/14">
+            <h3 className="py-5 text-sm font-medium uppercase text-lutz-fog/80">
               Pontos de atenção
             </h3>
-            <ul className="mt-5 grid gap-3">
-              {result.attentionPoints.map((point) => (
+            <ul className="border-t border-lutz-fog/12">
+              {result.attentionPoints.map((point, index) => (
                 <li
-                  className="rounded-2xl border border-lutz-fog/15 bg-lutz-obsidian/35 p-4 text-sm leading-6 text-lutz-ivory/75"
+                  className="grid gap-4 border-b border-lutz-fog/12 py-6 last:border-b-0 sm:grid-cols-[4rem_1fr]"
                   key={point}
                 >
-                  {point}
+                  <span className="text-sm text-lutz-fog/42">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="max-w-2xl text-base leading-7 text-lutz-ivory/78">
+                    {point}
+                  </span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="border-t border-lutz-fog/15 pt-6">
-            <h3 className="text-sm font-semibold uppercase text-lutz-fog">
+          <div>
+            <h3 className="text-sm font-medium uppercase text-lutz-fog/80">
               Próximo passo recomendado
             </h3>
-            <p className="mt-4 text-base leading-7 text-lutz-ivory/80">
+            <p className="mt-5 max-w-2xl text-xl leading-8 text-lutz-ivory/82">
               {result.recommendedNextStep}
             </p>
           </div>
 
-          <div className="rounded-2xl border border-lutz-fog/25 bg-lutz-slate/20 p-4 text-sm leading-6 text-lutz-ivory/75">
+          <p className="border-l border-lutz-fog/24 pl-5 text-sm leading-6 text-lutz-fog/68">
             {result.institutionalNotice}
-          </div>
+          </p>
 
-          <div className="flex flex-col gap-4 border-t border-lutz-fog/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-4 border-t border-lutz-fog/14 pt-8 sm:flex-row sm:items-center sm:justify-between">
             <button
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-lutz-ivory px-6 py-3 text-sm font-semibold text-lutz-obsidian transition hover:bg-lutz-fog focus:outline-none focus:ring-2 focus:ring-lutz-ivory/50"
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-lutz-ivory px-7 py-3 text-sm font-medium text-lutz-obsidian transition hover:bg-lutz-fog focus:outline-none focus:ring-2 focus:ring-lutz-ivory/50"
               onClick={onRequestAnalysis}
               type="button"
             >
               Solicitar análise da marca
             </button>
             <button
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-lutz-fog/20 px-5 py-3 text-sm text-lutz-fog transition hover:border-lutz-fog/45 hover:text-lutz-ivory focus:outline-none focus:ring-2 focus:ring-lutz-fog/35"
+              className="inline-flex min-h-11 items-center justify-center rounded-full px-1 text-sm text-lutz-fog/65 transition hover:text-lutz-ivory focus:outline-none focus:ring-2 focus:ring-lutz-fog/35"
               onClick={onRestart}
               type="button"
             >
@@ -74,14 +81,14 @@ export function ResultPanel({
           </div>
 
           {ctaMessageVisible ? (
-            <p className="text-sm leading-6 text-lutz-fog/75">
+            <p className="max-w-2xl text-sm leading-6 text-lutz-fog/65">
               Este protótipo não envia respostas automaticamente. Para a próxima
               etapa, a análise profissional deve ser solicitada por um canal
               institucional da Lutz PI.
             </p>
           ) : null}
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }

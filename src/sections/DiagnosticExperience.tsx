@@ -62,121 +62,134 @@ export function DiagnosticExperience() {
 
   return (
     <section
-      className="bg-lutz-obsidian px-5 py-20 text-lutz-ivory sm:px-8 lg:px-12"
+      className="bg-lutz-obsidian px-5 py-24 text-lutz-ivory sm:px-8 sm:py-28 lg:px-12"
       id="diagnostico"
     >
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-10 lg:grid-cols-[0.68fr_0.32fr] lg:items-end">
           <div>
-            <p className="text-xs font-medium uppercase text-lutz-fog">
+            <p className="text-sm font-medium uppercase text-lutz-fog/85">
               Diagnóstico orientativo
             </p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-lutz-ivory sm:text-5xl">
+            <h2 className="mt-6 max-w-5xl text-4xl font-medium leading-[1.04] text-lutz-ivory sm:text-6xl lg:text-7xl">
               Localize a relação entre presença pública e proteção formal.
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-6 text-lutz-fog/75">
+          <p className="max-w-md text-base leading-7 text-lutz-fog/68 lg:pb-2">
             As respostas ficam apenas no navegador durante esta leitura. Nenhum
             cadastro é necessário para ver o resultado.
           </p>
         </div>
 
-        <div className="rounded-3xl border border-lutz-fog/20 bg-lutz-steel/25 p-4 shadow-[0_24px_90px_rgba(0,0,0,0.24)] sm:p-6 lg:p-8">
-          {showResult ? (
-            <ResultPanel
-              ctaMessageVisible={ctaMessageVisible}
-              onRequestAnalysis={() => setCtaMessageVisible(true)}
-              onRestart={handleRestart}
-              result={result}
-            />
-          ) : (
-            <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
-              <aside className="rounded-3xl border border-lutz-fog/15 bg-lutz-obsidian/35 p-5 sm:p-6">
-                <p className="text-xs font-medium uppercase text-lutz-fog">
+        {showResult ? (
+          <ResultPanel
+            ctaMessageVisible={ctaMessageVisible}
+            onRequestAnalysis={() => setCtaMessageVisible(true)}
+            onRestart={handleRestart}
+            result={result}
+          />
+        ) : (
+          <div className="mt-20 grid gap-14 border-t border-lutz-fog/16 pt-10 lg:grid-cols-[0.32fr_0.68fr] lg:gap-20 lg:pt-14">
+            <aside className="lg:sticky lg:top-10 lg:self-start">
+              <div className="flex items-center justify-between gap-6 text-sm text-lutz-fog/75">
+                <p className="font-medium uppercase">
                   Etapa {currentIndex + 1} de {diagnosticQuestions.length}
                 </p>
+                <p>{progress}%</p>
+              </div>
+              <div
+                aria-label="Progresso do diagnóstico"
+                aria-valuemax={100}
+                aria-valuemin={0}
+                aria-valuenow={progress}
+                className="mt-5 h-px bg-lutz-fog/18"
+                role="progressbar"
+              >
                 <div
-                  aria-label="Progresso do diagnóstico"
-                  aria-valuemax={100}
-                  aria-valuemin={0}
-                  aria-valuenow={progress}
-                  className="mt-5 h-2 rounded-full bg-lutz-fog/15"
-                  role="progressbar"
-                >
-                  <div
-                    className="h-full rounded-full bg-lutz-slate transition-all duration-300"
-                    style={{ width: `${progress}%` }}
-                  />
-                </div>
-                <p className="mt-6 text-sm leading-6 text-lutz-fog/75">
-                  Vamos localizar a presença atual da marca sem transformar esta
-                  leitura em parecer jurídico.
-                </p>
-              </aside>
+                  className="h-px bg-lutz-fog/75 transition-all duration-300"
+                  style={{ width: `${progress}%` }}
+                />
+              </div>
+              <p className="mt-8 max-w-sm text-base leading-7 text-lutz-fog/60">
+                Vamos localizar a presença atual da marca sem transformar esta
+                leitura em parecer jurídico.
+              </p>
+            </aside>
 
-              <div className="rounded-3xl border border-lutz-fog/15 bg-lutz-obsidian p-5 sm:p-8">
-                <p className="text-xs font-medium uppercase text-lutz-fog">
-                  {currentQuestion.eyebrow}
-                </p>
-                <h3 className="mt-4 text-2xl font-semibold leading-tight text-lutz-ivory sm:text-3xl">
-                  {currentQuestion.title}
-                </h3>
-                <p className="mt-4 text-sm leading-6 text-lutz-fog/75">
-                  {currentQuestion.helper}
-                </p>
+            <article>
+              <p className="text-sm font-medium uppercase text-lutz-fog/80">
+                {currentQuestion.eyebrow}
+              </p>
+              <h3 className="mt-6 max-w-4xl text-3xl font-medium leading-[1.08] text-lutz-ivory sm:text-5xl">
+                {currentQuestion.title}
+              </h3>
+              <p className="mt-6 max-w-2xl text-base leading-7 text-lutz-fog/68 sm:text-lg">
+                {currentQuestion.helper}
+              </p>
 
-                <div className="mt-8 grid gap-3">
-                  {currentQuestion.options.map((option) => {
-                    const isSelected = selectedAnswer === option.value;
+              <div className="mt-12 border-y border-lutz-fog/14">
+                {currentQuestion.options.map((option, optionIndex) => {
+                  const isSelected = selectedAnswer === option.value;
 
-                    return (
-                      <button
-                        aria-pressed={isSelected}
-                        className={[
-                          "min-h-20 rounded-2xl border p-4 text-left transition focus:outline-none focus:ring-2 focus:ring-lutz-fog/45",
-                          isSelected
-                            ? "border-lutz-fog/70 bg-lutz-slate/20"
-                            : "border-lutz-fog/15 bg-lutz-ivory/[0.025] hover:border-lutz-fog/35 hover:bg-lutz-ivory/[0.045]",
-                        ].join(" ")}
-                        key={option.value}
-                        onClick={() => handleSelect(option.value)}
-                        type="button"
-                      >
-                        <span className="block text-base font-medium text-lutz-ivory">
+                  return (
+                    <button
+                      aria-pressed={isSelected}
+                      className={[
+                        "group grid w-full gap-4 border-b border-lutz-fog/12 py-7 text-left transition last:border-b-0 focus:outline-none focus:ring-2 focus:ring-lutz-fog/35 sm:grid-cols-[4rem_1fr_auto] sm:items-start sm:px-2",
+                        isSelected
+                          ? "text-lutz-ivory"
+                          : "text-lutz-ivory/82 hover:text-lutz-ivory",
+                      ].join(" ")}
+                      key={option.value}
+                      onClick={() => handleSelect(option.value)}
+                      type="button"
+                    >
+                      <span className="text-sm text-lutz-fog/45 transition group-hover:text-lutz-fog/70">
+                        {String(optionIndex + 1).padStart(2, "0")}
+                      </span>
+                      <span>
+                        <span className="block text-xl font-medium leading-snug">
                           {option.label}
                         </span>
-                        <span className="mt-2 block text-sm leading-6 text-lutz-fog/75">
+                        <span className="mt-3 block max-w-2xl text-base leading-7 text-lutz-fog/62">
                           {option.description}
                         </span>
-                      </button>
-                    );
-                  })}
-                </div>
-
-                <div className="mt-8 flex flex-col-reverse gap-3 border-t border-lutz-fog/15 pt-5 sm:flex-row sm:items-center sm:justify-between">
-                  <button
-                    className="inline-flex min-h-12 items-center justify-center rounded-full border border-lutz-fog/20 px-5 py-3 text-sm text-lutz-fog transition hover:border-lutz-fog/45 hover:text-lutz-ivory focus:outline-none focus:ring-2 focus:ring-lutz-fog/35 disabled:cursor-not-allowed disabled:opacity-35"
-                    disabled={currentIndex === 0}
-                    onClick={handleBack}
-                    type="button"
-                  >
-                    Voltar
-                  </button>
-                  <button
-                    className="inline-flex min-h-12 items-center justify-center rounded-full bg-lutz-ivory px-6 py-3 text-sm font-semibold text-lutz-obsidian transition hover:bg-lutz-fog focus:outline-none focus:ring-2 focus:ring-lutz-ivory/50 disabled:cursor-not-allowed disabled:opacity-40"
-                    disabled={!selectedAnswer}
-                    onClick={handleNext}
-                    type="button"
-                  >
-                    {currentIndex === diagnosticQuestions.length - 1
-                      ? "Ver resultado"
-                      : "Continuar"}
-                  </button>
-                </div>
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className={[
+                          "mt-1 hidden h-2.5 w-2.5 rounded-full transition sm:block",
+                          isSelected ? "bg-lutz-ivory" : "bg-lutz-fog/20",
+                        ].join(" ")}
+                      />
+                    </button>
+                  );
+                })}
               </div>
-            </div>
-          )}
-        </div>
+
+              <div className="mt-10 flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <button
+                  className="inline-flex min-h-11 items-center justify-center rounded-full px-1 text-sm text-lutz-fog/65 transition hover:text-lutz-ivory focus:outline-none focus:ring-2 focus:ring-lutz-fog/35 disabled:cursor-not-allowed disabled:opacity-30"
+                  disabled={currentIndex === 0}
+                  onClick={handleBack}
+                  type="button"
+                >
+                  Voltar
+                </button>
+                <button
+                  className="inline-flex min-h-12 items-center justify-center rounded-full bg-lutz-ivory px-7 py-3 text-sm font-medium text-lutz-obsidian transition hover:bg-lutz-fog focus:outline-none focus:ring-2 focus:ring-lutz-ivory/50 disabled:cursor-not-allowed disabled:opacity-35"
+                  disabled={!selectedAnswer}
+                  onClick={handleNext}
+                  type="button"
+                >
+                  {currentIndex === diagnosticQuestions.length - 1
+                    ? "Ver resultado"
+                    : "Continuar"}
+                </button>
+              </div>
+            </article>
+          </div>
+        )}
       </div>
     </section>
   );
